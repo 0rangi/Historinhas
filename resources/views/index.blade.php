@@ -1,3 +1,5 @@
+@extends('layout')
+@section('content')
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -24,7 +26,6 @@
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Escreva sua história!!</h1>
-          <p><a class="btn btn-outline-dark" href="cadastro/form-Con.php" role="button">Cadastrar Convidados &raquo;</a></p>
         </div>
       </div>
 
@@ -34,7 +35,7 @@
           <div class="col-md-3">
             <h2>Cadastrar Gênero</h2>
             <p class="font"> Aqui você pode cadastrar diversos tipos de gêneros para suas histórias, assim você pode organiza-las</p>
-            <p class="esse"><a class="btn btn-outline-dark" href="cadastro/exibir.php" role="button">Ver lista &raquo;</a></p>
+            <p class="esse"><a class="btn btn-outline-dark" href="{{route('novogenero')}}" role="button">Ver lista &raquo;</a></p>
           </div>
           
           <div class="col-md-3">
@@ -50,21 +51,13 @@
           <div class="col-md-3">
             <h2> Listar Histórias</h2>
             <p class="font">Aqui você confere suas histórias cadastradas e suas especificidades</p>
-            <p><a class="btn btn-outline-dark" href="#" role="button">Ver detalhes &raquo;</a></p>
+            <p><a class="btn btn-outline-dark" href="*" role="button">Ver detalhes &raquo;</a></p>
           </div>
-        </div>
-
+        </div>2&ordf; Avaliação do 1&ordm;uou
         <hr>
 
-      </div> <!-- /container -->
+      </div> 
 
-    </main>
-
-
-    <!-- Principal JavaScript do Bootstrap
-    ================================================== -->
-    <!-- Foi colocado no final para a página carregar mais rápido -->
-
-   
+    </main>   
   </body>
 </html>

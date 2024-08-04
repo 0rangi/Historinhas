@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('inicio');
+
+Route::get('/criargenero', [App\Http\Controllers\ControladorGenero::class,'create'])->name('novogenero');
+Route::get('/genero', [App\Http\Controllers\ControladorGenero::class, 'index'])->name('exibegenero');

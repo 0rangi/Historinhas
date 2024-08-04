@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('arcos', function (Blueprint $table) {
-            $table->bigincrements('idArco');
+            $table->bigincrements('id');
             $table->string('nomeArco');
             $table->string('descricaoArco');
             $table->timestamps();
