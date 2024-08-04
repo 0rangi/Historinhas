@@ -1,20 +1,7 @@
 @extends('layout')
 @section('content')
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Home</title>
-    @vite(['resources/js/app.js'])
-    <!-- Principal CSS do Bootstrap -->
 
 
-    <!-- Estilos customizados para esse template -->
-   
-   
   </head>
 
   <body>
@@ -53,8 +40,8 @@
             <p class="font">Aqui você confere suas histórias cadastradas e suas especificidades</p>
             <p><a class="btn btn-outline-dark" href="*" role="button">Ver detalhes &raquo;</a></p>
           </div>
-        </div>2&ordf; Avaliação do 1&ordm;uou
-        <hr>
+        </div>
+       
 
       </div> 
 
