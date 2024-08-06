@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('nomeHist');
             $table->string('descricaoHist');
             $table->string('autor');
-            $table->int('paginas');
+            $table->integer('paginas');
             $table->string('classificacao');
             $table->unsignedBigInteger('genId');
-            $table->foreign('genId')->references('idGenero')->on('Generos');
+            $table->foreign('genId')->references('id')->on('generos');
 
             $table->timestamps();
         });

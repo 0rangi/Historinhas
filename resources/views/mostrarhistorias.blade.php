@@ -12,7 +12,7 @@
         </div><br />
     @endif
     <div class="card-body">
-        <h5 class="card-title" style="text-align: center">Listagem de Gêneros</h5>
+        <h5 class="card-title" style="text-align: center">Listagem de histórias</h5>
             <table class="table table-ordered table-hover">
                 <thead>
                     <tr>
@@ -27,12 +27,12 @@
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->Nome }}</td>
-                        <td>{{ $item->Email }}</td>
+                        <td>{{ $item->Descrição }}</td>
                         <td style="text-align:center">
-                            <a href="/autor/editar/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
+                            <a href="/historia/editar/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
                         </td>
                         <td style="text-align:center">
-                            <a href="/autor/apagar/{{$item->id}}" class="btn btn-outline-danger" 
+                            <a href="/historia/apagar/{{$item->id}}" class="btn btn-outline-danger" 
                                onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
                         </td>
                     </tr>  

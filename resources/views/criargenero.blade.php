@@ -8,7 +8,7 @@
                 <h1 class="mt-5 text-center">CADASTRE UM NOVO GÊNERO</h1>
             </div>
         </div>
-        <form action="*" method="POST">
+        <form action="{{route('gravagenero')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nomeGen">Nome:</label>

@@ -10,10 +10,14 @@
 <body>
  
         @component('navbar')
-
-        
         @endcomponent
-
+        <main role="main" class="py-4">
+        @hasSection('content')
+            @yield('content')
+        @endif
+    </main>
+    
+   
 
 </body>
 </html>

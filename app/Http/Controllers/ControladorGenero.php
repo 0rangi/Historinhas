@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Genero;
 
 class ControladorGenero extends Controller
 {
-    public function index()
-    {
+    public function index(){
         $dados = Genero::all();
-        return view('mostrarGenero', compact('dados'));
+        return view('mostrargenero', compact('dados'));
     }
 
-    public function create()
-    {
+    public function create(){
         return view('criargenero');
     }
 

@@ -3,62 +3,98 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Historia;
 
 class ControladorHistorias extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $dados = Historia::all();
+        return view('criarhistoria', compact('dados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('criarhistoria');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        $dados = new Historia();
+        $dados->nome_hist = $request->input('nome_hist');
+        $dados->descricao_hist = $request->input('descricao_hist');
+        $dados->autor = $request->input('autor'); 
+        $dados->paginas = $request->input('paginas');
+        $dados->classificacao_etaria = $request->input('classificacao_etaria');
+        if($dados->save())
+            return redirect('/historia')->with('success', 'História cadastrado com sucesso!!');
+        return redirect('/historia')->with('danger', 'Erro ao cadastrar história!');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+    public function edit(string $id){
+        $dados = Historia::find($id);
+        if(isset($dados))
+            return view('editaHistoria', compact('dados'));
+        return redirect('/historia')->with('danger', 'Cadastro do história não localizado!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $dados = Historia::find($id);
+        if(isset($dados)){
+            $dados->nome_hist = $request->input('nome_hist');
+            $dados->descricao_hist = $request->input('descricao_hist');
+            $dados->autor = $request->input('autor'); 
+            $dados->paginas = $request->input('paginas');
+            $dados->classificacao_etaria = $request->input('classificacao_etaria');
+            $dados->save();
+            return redirect('/historia')->with('success', 'História cadastrado com sucesso!!');
+        }else{
+            return redirect('/historia')->with('danger', 'Cadastro do história não localizado!');
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
-        //
+        $dados = Historia::find($id);
+        if(isset($dados)){
+            $livros = LivroAutor::where('autor_id', '=', $id)->first();
+            if(!isset($historias)){
+                $dados->delete();
+                return redirect('/historia')->with('success', 'Cadastro do historia deletado com sucesso!!');
+            }else{
+                return redirect('/historia')->with('danger', 'Cadastro não pode ser excluído!!');
+            } 
+        }else{
+            return redirect('/historia')->with('danger', 'Cadastro não localizado!!');
+        } 
     }
+    public function pesquisaHistoria(){
+        $dados = array("tabela" => "Historias");
+        return view('pesquisa', compact('dados'));
+    }
+
+    public function procuraHistoria(Request $request){
+        $nome_hist = $request->input('texto');
+        $dados = DB::table('Historias')->select('id', 'nome_hist', 'AnoPublicacao')->where(DB::raw('lower(nome_hist)'), 'like', '%' . strtolower($nome_hist) . '%')->get();
+        return view('exibeHistorias', compact('dados'));
+    }
+
+  
+
 }
+
+
+
+
+
+
+
+

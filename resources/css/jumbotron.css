@@ -1,25 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 /* Move o conteúdo 3.5rem para baixo, porque usamos uma navbar fixa que tem altura de 3.5rem */
 body {
     padding-top: 3.5rem;
   }
   
   .container {
-    background-color: rgb(255, 255, 255);
+    background-color:#f2eee7;
     text-align: center;
     border: 70px solid transparent;
     border-image: url("../../public/storage/img/rodape.png") 150 round;
+    font-weight: 600;
+
   }
 
 .font{
   font-size: 1.5rem;
+  
 }
 
 h2{
-  background-color:#f7cf90;
-  border-style:dotted;
-  border-color: aliceblue;
+  background-color:#4a5770;
+  border-style:groove;
+  border-color: rgb(16, 16, 24);
+  color: azure;
 }
-main{
-  border-style:dashed;
-  border-color:#e0b848;
+
+h1{
+font-size: 450%;
+font-weight: 600;
 }
+
+*{
+  font-family: "QuickSand", sans-serif;
+  font-weight: 600;
+
+}
+
+nav{
+background-color: "#393F50";
+}
+
