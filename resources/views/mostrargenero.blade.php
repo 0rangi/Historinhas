@@ -29,10 +29,10 @@
                         <td>{{ $item->Nome }}</td>
                         <td>{{ $item->Email }}</td>
                         <td style="text-align:center">
-                            <a href="/autor/editar/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
+                            <a href="/genero/editar/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
                         </td>
                         <td style="text-align:center">
-                            <a href="/autor/apagar/{{$item->id}}" class="btn btn-outline-danger" 
+                            <a href="/genero/apagar/{{$item->id}}" class="btn btn-outline-danger" 
                                onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
                         </td>
                     </tr>  

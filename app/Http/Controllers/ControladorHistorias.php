@@ -12,7 +12,7 @@ class ControladorHistorias extends Controller
      */
     public function index(){
         $dados = Historia::all();
-        return view('criarhistoria', compact('dados'));
+        return view('mostrarhistorias', compact('dados'));
     }
 
     public function create()
@@ -23,10 +23,10 @@ class ControladorHistorias extends Controller
     public function store(Request $request){
         $dados = new Historia();
         $dados->nome_hist = $request->input('nome_hist');
-        $dados->descricao_hist = $request->input('descricao_hist');
+        $dados->descricaoHist  = $request->input('descricaoHist');
         $dados->autor = $request->input('autor'); 
         $dados->paginas = $request->input('paginas');
-        $dados->classificacao_etaria = $request->input('classificacao_etaria');
+        $dados->classificacao = $request->input('classificacao');
         if($dados->save())
             return redirect('/historia')->with('success', 'História cadastrado com sucesso!!');
         return redirect('/historia')->with('danger', 'Erro ao cadastrar história!');
@@ -65,7 +65,7 @@ class ControladorHistorias extends Controller
     {
         $dados = Historia::find($id);
         if(isset($dados)){
-            $livros = LivroAutor::where('autor_id', '=', $id)->first();
+            $historias= Historia::where('id', '=', $id)->first();
             if(!isset($historias)){
                 $dados->delete();
                 return redirect('/historia')->with('success', 'Cadastro do historia deletado com sucesso!!');

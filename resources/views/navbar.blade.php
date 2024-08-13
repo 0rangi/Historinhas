@@ -28,7 +28,7 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Arcos</a>
+            <a class="nav-link dropdown-toggle" href="{{route('novoArco')}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Arcos</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="">Cadastrar</a>
               <a class="dropdown-item" href="">Listar</a>

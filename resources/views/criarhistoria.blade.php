@@ -5,10 +5,10 @@
     <div class="card-body">
         <div class="jumbotron">
             <div class="container">
-                <h1 class="mt-5 text-center">CADASTRE UM NOVO GÊNERO</h1>
+                <h1 class="mt-5 text-center">CADASTRE UMA NOVA HISTÓRIA</h1>
             </div>
         </div>
-        <form action="*" method="POST">
+        <form action="{{route('gravahistoria')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nomeHist">Nome:</label>

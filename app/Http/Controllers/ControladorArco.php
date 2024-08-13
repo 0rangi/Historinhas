@@ -13,7 +13,7 @@ class ControladorArco extends Controller
     }
 
     public function create(){
-        return view('criarArcos');
+        return view('criararco');
     }
 
   

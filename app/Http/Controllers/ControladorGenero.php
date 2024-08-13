@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Genero;
+use App\Models\Historia;
 
 class ControladorGenero extends Controller
 {
@@ -55,7 +56,7 @@ class ControladorGenero extends Controller
     public function destroy(string $id){
         $dados = Genero::find($id);
         if(isset($dados)){
-            $historias = HistoriasGenero::where('genero_id', '=', $id)->first();
+            $historias = Historia::where('genId', '=', $id)->first();
             if(!isset($historias)){
                 $dados->delete();
                 return redirect('/genero')->with('success', 'Cadastro do gênero deletado com sucesso!!');
@@ -67,7 +68,7 @@ class ControladorGenero extends Controller
         } 
     }
     public function pesquisaGenero(){
-        $dados = array("tabela" => "genero");
+        $dados = array("tabela" => "generos");
         return view('pesquisa', compact('dados'));
     }
 
