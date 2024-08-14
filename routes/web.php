@@ -28,7 +28,11 @@ Route::post('/historia', [App\Http\Controllers\ControladorHistorias::class, 'sto
 Route::get('/historia/apagar/{id}', [App\Http\Controllers\ControladorHistorias::class, 'destroy'])->name('deletahistoria');
 
 Route::get('/criarpersonagem', [App\Http\Controllers\ControladorPersonagens::class,'create'])->name('novoPersonagem');
+Route::get('/personagem', [App\Http\Controllers\ControladorPersonagens::class, 'index'])->name('mostarpersonagem');
+Route::post('/personagem', [App\Http\Controllers\ControladorPersonagens::class, 'store'])->name('gravapersonagem');
+Route::get('/personagem/apagar/{id}', [App\Http\Controllers\ControladorPersonagens::class, 'destroy'])->name('deletapersonagem');
 
-Route::get('/criararcos', [App\Http\Controllers\ControladorPersonagens::class,'create'])->name('novoArco');
-Route::get('/arco', [App\Http\Controllers\ControladorArco::class, 'index'])->name('exibearco');
+Route::get('/criararcos', [App\Http\Controllers\ControladorArco::class,'create'])->name('novoArco');
+Route::get('/arco', [App\Http\Controllers\ControladorArco::class, 'index'])->name('mostrararco');
 Route::post('/arco', [App\Http\Controllers\ControladorArco::class, 'store'])->name('gravaarco');
+Route::get('/arco/apagar/{id}', [App\Http\Controllers\ControladorArco::class, 'destroy'])->name('deletaarco');

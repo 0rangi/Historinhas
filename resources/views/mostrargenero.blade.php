@@ -18,7 +18,7 @@
                     <tr>
                         <th>id</th>
                         <th>Nome</th>
-                        <th>E-mail</th>
+                        <th>Descrição</th>
                         <th style="text-align:center" colspan="2">Ações</th>
                     </tr>
                 </thead>
@@ -26,8 +26,8 @@
                     @foreach ($dados as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->Nome }}</td>
-                        <td>{{ $item->Email }}</td>
+                        <td>{{ $item->nomeGen }}</td>
+                        <td>{{ $item->descricao }}</td>
                         <td style="text-align:center">
                             <a href="/genero/editar/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
                         </td>

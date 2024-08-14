@@ -22,11 +22,12 @@ class ControladorHistorias extends Controller
 
     public function store(Request $request){
         $dados = new Historia();
-        $dados->nome_hist = $request->input('nome_hist');
+        $dados->nomeHist = $request->input('nomeHist');
         $dados->descricaoHist  = $request->input('descricaoHist');
         $dados->autor = $request->input('autor'); 
         $dados->paginas = $request->input('paginas');
         $dados->classificacao = $request->input('classificacao');
+        
         if($dados->save())
             return redirect('/historia')->with('success', 'História cadastrado com sucesso!!');
         return redirect('/historia')->with('danger', 'Erro ao cadastrar história!');

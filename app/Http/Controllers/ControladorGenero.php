@@ -46,7 +46,7 @@ class ControladorGenero extends Controller
             $dados->Nome = $request->input('nomeGen');
             $dados->Descricao = $request->input('descricao');
             $dados->save();
-            return redirect('/genero')->with('success', 'Cadastro do gênero atualizado com sucesso!!');
+            return redirect('/genero')->with('success', 'Gênero atualizado com sucesso!!');
         }
         return redirect('/genero')->with('danger', 'Cadastro de genero não localizado!');
     
@@ -59,7 +59,7 @@ class ControladorGenero extends Controller
             $historias = Historia::where('genId', '=', $id)->first();
             if(!isset($historias)){
                 $dados->delete();
-                return redirect('/genero')->with('success', 'Cadastro do gênero deletado com sucesso!!');
+                return redirect('/genero')->with('success', 'Gênero deletado com sucesso!!');
             }else{
                 return redirect('/genero')->with('danger', 'Cadastro não pode ser excluído!!');
             } 

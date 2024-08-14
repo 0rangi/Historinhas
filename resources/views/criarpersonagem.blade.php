@@ -8,7 +8,7 @@
                 <h1 class="mt-5 text-center">CADASTRE UM NOVO PERSONAGEM</h1>
             </div>
         </div>
-        <form action="*" method="POST">
+        <form action="{{route('gravapersonagem')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nomePersonagem">Nome:</label>

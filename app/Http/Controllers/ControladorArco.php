@@ -9,7 +9,8 @@ class ControladorArco extends Controller
 {
  
     public function index(){
-        return view('mostrarArcos', compact('dados'));
+        $dados = Arco::all();
+        return view('mostrararco', compact('dados'));
     }
 
     public function create(){
@@ -54,9 +55,9 @@ class ControladorArco extends Controller
 
  
     public function destroy(string $id){
-        $dados = Genero::find($id);
+        $dados = Arco::find($id);
         if(isset($dados)){
-            $arcos = PersonagemArco::where('id', '=', $id)->first();
+            $arcos = Arco::where('id', '=', $id)->first();
             if(!isset($arcos)){
                 $dados->delete();
                 return redirect('/arco')->with('success', 'Cadastro do arco deletado com sucesso!!');

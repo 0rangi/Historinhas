@@ -39,7 +39,10 @@
                 <input type="classificacao" class="form-control" name="classificacao" 
                        placeholder="Informe a classificação">
             </div>
+        
             <hr>
+            
+         
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
             <button onclick="window.location.href='{{route('inicio')}}';" type="button" 
                     class="btn btn-outline-danger btn-sm">Cancelar</button>

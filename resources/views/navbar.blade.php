@@ -14,24 +14,21 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{{route('novoHistoria')}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Histórias</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="">Cadastrar</a>
-            <a class="dropdown-item" href="">Listar</a>
+            <a class="dropdown-item" href="{{route('exibehistoria')}}">Listar</a>
             <a class="dropdown-item" href="">Pesquisar</a>
           </div>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="{{route('novoPersonagem')}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Personagens</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="">Cadastrar</a>
-              <a class="dropdown-item" href="">Listar</a>
+              <a class="dropdown-item" href="{{route('mostarpersonagem')}}">Listar</a>
               <a class="dropdown-item" href="">Pesquisar</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="{{route('novoArco')}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Arcos</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="">Cadastrar</a>
-              <a class="dropdown-item" href="">Listar</a>
+              <a class="dropdown-item" href="{{route('mostrararco')}}">Listar</a>
               <a class="dropdown-item" href="">Pesquisar</a>
             </div>
           </li>

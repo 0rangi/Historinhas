@@ -10,7 +10,7 @@ class ControladorPersonagens extends Controller
  
     public function index(){
         $dados = Personagem::all();
-        return view('exibePersonagem', compact('dados'));
+        return view('mostrarpersonagem', compact('dados'));
     }
 
    
@@ -19,7 +19,7 @@ class ControladorPersonagens extends Controller
     }
 
     public function store(Request $request){
-        $dados = new Genero();
+        $dados = new Personagem();
         $dados->nomePersonagem = $request->input('nomePersonagem');
         $dados->descricaoPersonagem = $request->input('descricaoPersonagem');
         $dados->idade = $request->input('idade');
@@ -34,7 +34,7 @@ class ControladorPersonagens extends Controller
     }
 
     public function edit(string $id){
-        $dados = Genero::find($id);
+        $dados = Personagem::find($id);
         if(isset($dados))
             return view('editarPersonagem', compact('dados'));
         return redirect('/personagem')->with('danger', 'Cadastro do personagem não localizado!');
@@ -42,7 +42,7 @@ class ControladorPersonagens extends Controller
 
     public function update(Request $request, string $id)
     {
-        $dados = Genero::find($id);
+        $dados = Personagem::find($id);
         if(isset($dados)){
             $dados->nomePersonagem = $request->input('nomePersonagem');
             $dados->descricaoPersonagem = $request->input('descricaoPersonagem');
@@ -57,7 +57,7 @@ class ControladorPersonagens extends Controller
     public function destroy(string $id){
         $dados = Personagem::find($id);
         if(isset($dados)){
-            $personagems = Personagem::where('personagem_id', '=', $id)->first();
+            $personagems = Personagem::where('Id', '=', $id)->first();
             if(!isset($personagems)){
                 $dados->delete();
                 return redirect('/personagem')->with('success', 'Cadastro do personagem deletado com sucesso!!');
