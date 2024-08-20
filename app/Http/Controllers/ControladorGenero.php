@@ -36,7 +36,7 @@ class ControladorGenero extends Controller
     {
         $dados = Genero::find($id);
         if(isset($dados))
-            return view('editarGenero', compact('dados'));
+            return view('editargenero', compact('dados'));
         return redirect('/genero')->with('danger', 'Cadastro do genero não localizado!');
     }
 

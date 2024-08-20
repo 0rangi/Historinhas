@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('descricaoPersonagem');
             $table->string('idade');
             $table->timestamps();
+            $table->unsignedBigInteger('histId');
+            $table->foreign('histId')->references('id')->on('historias');
         });
     }
 

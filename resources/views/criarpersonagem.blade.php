@@ -28,6 +28,15 @@
                        placeholder="Informe a idade">
             </div>
             <hr>
+            <div class="form-group">
+                <label for="historia">Selecione a história que o personagem pertence</label>
+                <select class="form-control" name="historia" id="historia" required>
+                    @foreach ($historia as $item)
+                        <option value="{{$item->id}}">{{$item->nomeHist}}</option>
+                    @endforeach
+                </select>
+              </div>
+            <hr>
      
           
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>

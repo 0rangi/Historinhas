@@ -43,7 +43,7 @@ class ControladorArco extends Controller
         $dados = Arco::find($id);
         if(isset($dados))
         $personagem = Personagem::all();
-            return view('editarArco', compact('dados', 'personagem'));
+            return view('editararco', compact('dados', 'personagem'));
         return redirect('/arco')->with('danger', 'Cadastro do arco não localizado!');
     }
 
@@ -79,7 +79,7 @@ class ControladorArco extends Controller
                 $arcos = Arco ::find($id);
                 $dados->nomeHist = $arcos->nomeHist;
                 $dados->id = $id;
-                return view('novoAutorLivro', compact('dados'));
+                return view('criarpersonagem', compact('dados'));
             }
             return redirect('/arco')->with('danger', 'Não há arcos cadastrados!!');
         }

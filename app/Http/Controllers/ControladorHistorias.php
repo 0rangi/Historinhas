@@ -18,7 +18,8 @@ class ControladorHistorias extends Controller
 
     public function create()
     {
-        return view('criarhistoria');
+        $genero = Genero::all();
+        return view('criarhistoria', compact('genero'));
     }
 
     public function store(Request $request){
@@ -28,6 +29,7 @@ class ControladorHistorias extends Controller
         $dados->autor = $request->input('autor'); 
         $dados->paginas = $request->input('paginas');
         $dados->classificacao = $request->input('classificacao');
+        $dados->genId = $request->input('genero');
         
         if($dados->save())
             return redirect('/historia')->with('success', 'História cadastrado com sucesso!!');
@@ -42,7 +44,7 @@ class ControladorHistorias extends Controller
     public function edit(string $id){
         $dados = Historia::find($id);
         if(isset($dados))
-            return view('editaHistoria', compact('dados'));
+            return view('editarhistoria', compact('dados'));
         return redirect('/historia')->with('danger', 'Cadastro do história não localizado!');
     }
 
@@ -68,13 +70,11 @@ class ControladorHistorias extends Controller
     {
         $dados = Historia::find($id);
         if(isset($dados)){
-            $historias= Historia::where('id', '=', $id)->first();
-            if(!isset($historias)){
+            
+            
                 $dados->delete();
                 return redirect('/historia')->with('success', 'Cadastro do historia deletado com sucesso!!');
-            }else{
-                return redirect('/historia')->with('danger', 'Cadastro não pode ser excluído!!');
-            } 
+            
         }else{
             return redirect('/historia')->with('danger', 'Cadastro não localizado!!');
         } 
@@ -91,6 +91,16 @@ class ControladorHistorias extends Controller
         return view('exibeHistorias', compact('dados'));
     }
 
+    public function novoGenero($id){
+        $dados = DB::table('genero')->orderBy('nomeGen')->get();
+        if(isset($dados)){
+            $genero = novoGenero ::find($id);
+            $dados->nomeHist = $genero->nomeHist;
+            $dados->id = $id;
+            return view('criarhist', compact('dados'));
+        }
+        return redirect('/historia')->with('danger', 'Não há histórias cadastradas!!');
+    }
   
 
 }

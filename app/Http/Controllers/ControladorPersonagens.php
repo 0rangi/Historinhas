@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Personagem;
 use App\Models\Arco;
+use App\Models\Historia;
 
 class ControladorPersonagens extends Controller
 {
@@ -16,7 +17,8 @@ class ControladorPersonagens extends Controller
 
    
     public function create(){
-        return view('criarpersonagem');
+        $historia = Historia::all();
+        return view('criarpersonagem', compact('historia'));
     }
 
     public function store(Request $request){
@@ -24,6 +26,7 @@ class ControladorPersonagens extends Controller
         $dados->nomePersonagem = $request->input('nomePersonagem');
         $dados->descricaoPersonagem = $request->input('descricaoPersonagem');
         $dados->idade = $request->input('idade');
+        $dados->histId = $request->input('historia');
         if($dados->save())
             return redirect('/personagem')->with('success', 'Personagem cadastrado com sucesso!! :)');
         return redirect('/personagem')->with('danger', 'Erro ao cadastrar personagem!:(');
@@ -37,7 +40,7 @@ class ControladorPersonagens extends Controller
     public function edit(string $id){
         $dados = Personagem::find($id);
         if(isset($dados))
-            return view('editarPersonagem', compact('dados'));
+            return view('editarpersonagem', compact('dados'));
         return redirect('/personagem')->with('danger', 'Cadastro do personagem não localizado!');
     }
 
@@ -58,15 +61,23 @@ class ControladorPersonagens extends Controller
     public function destroy(string $id){
         $dados = Personagem::find($id);
         if(isset($dados)){
-            $personagems = Arco::where('personagem_id', '=', $id)->first();
-            if(!isset($personagems)){
+            
                 $dados->delete();
                 return redirect('/personagem')->with('success', 'Cadastro do personagem deletado com sucesso!!');
-            }else{
-                return redirect('/personagem')->with('danger', 'Cadastro não pode ser excluído!!');
-            } 
+            
         }else{
             return redirect('/personagem')->with('danger', 'Cadastro não localizado!!');
         } 
     }
+    public function novoHistoria($id){
+        $dados = DB::table('historia')->orderBy('nomeHist')->get();
+        if(isset($dados)){
+            $historia = novoHistoria::find($id);
+            $dados->nomePersonagem = $historia->nomePersonagem;
+            $dados->id = $id;
+            return view('criarhistoria', compact('dados'));
+        }
+        return redirect('/historia')->with('danger', 'Não há histórias cadastradas!!');
+    }
+  
 }

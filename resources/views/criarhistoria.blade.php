@@ -39,9 +39,17 @@
                 <input type="classificacao" class="form-control" name="classificacao" 
                        placeholder="Informe a classificação">
             </div>
-        
             <hr>
+            <div class="form-group">
+                <label for="genero">Selecione o gênero da historia</label>
+                <select class="form-control" name="genero" id="genero" required>
+                    @foreach ($genero as $item)
+                        <option value="{{$item->id}}">{{$item->nomeGen}}</option>
+                    @endforeach
+                </select>
+              </div>
             
+              <hr>
          
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
             <button onclick="window.location.href='{{route('inicio')}}';" type="button" 
