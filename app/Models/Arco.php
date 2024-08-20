@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Arco extends Model
 {
     use HasFactory;
-    protected $fillable = ['descricaoArco','nomeArco'];
+    protected $fillable = ['descricaoArco','nomeArco', 'personagem_id'];
     public function personagem(){
         return $this->belongsTo('App\Models\Personagem');
     }

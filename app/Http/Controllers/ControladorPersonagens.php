@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Personagem;
+use App\Models\Arco;
 
 class ControladorPersonagens extends Controller
 {
@@ -57,7 +58,7 @@ class ControladorPersonagens extends Controller
     public function destroy(string $id){
         $dados = Personagem::find($id);
         if(isset($dados)){
-            $personagems = Personagem::where('Id', '=', $id)->first();
+            $personagems = Arco::where('personagem_id', '=', $id)->first();
             if(!isset($personagems)){
                 $dados->delete();
                 return redirect('/personagem')->with('success', 'Cadastro do personagem deletado com sucesso!!');

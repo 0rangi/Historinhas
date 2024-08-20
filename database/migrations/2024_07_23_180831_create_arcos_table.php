@@ -15,6 +15,8 @@ return new class extends Migration
             $table->bigincrements('id');
             $table->string('nomeArco');
             $table->string('descricaoArco');
+            $table->unsignedBigInteger('personagem_id');
+            $table->foreign('personagem_id')->references('id')->on('personagem');
             $table->timestamps();
         });
     }

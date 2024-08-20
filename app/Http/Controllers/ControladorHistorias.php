@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Historia;
+use App\Models\Genero;
 
 class ControladorHistorias extends Controller
 {
@@ -59,7 +60,8 @@ class ControladorHistorias extends Controller
         }else{
             return redirect('/historia')->with('danger', 'Cadastro do história não localizado!');
         }
-    }
+    }  
+
 
 
     public function destroy(string $id)
@@ -77,6 +79,7 @@ class ControladorHistorias extends Controller
             return redirect('/historia')->with('danger', 'Cadastro não localizado!!');
         } 
     }
+    
     public function pesquisaHistoria(){
         $dados = array("tabela" => "Historias");
         return view('pesquisa', compact('dados'));
