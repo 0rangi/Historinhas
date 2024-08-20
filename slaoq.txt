@@ -9,10 +9,10 @@ cadastrar gêneros nas histórias (relação 1 p muitos)(ele não cadastra as hi
 cadastrar historia do personagem*
 criar o editar de todas as classes*
 
-arrumar as viwes de
+arrumar as views de editar
 pesquisar de todos as classes
 
-
+:)
     
     ||
     oo
