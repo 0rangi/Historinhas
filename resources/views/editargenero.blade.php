@@ -12,8 +12,13 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome" 
-                       value="{{$dados->NomeGenero}}">
+                <input type="text" class="form-control" name="nomeGen" 
+                       value="{{$dados->nomeGen}}">
+            </div>
+            <div class="form-group">
+                <label for="nome">Descrição:</label>
+                <input type="text" class="form-control" name="descricao" 
+                       value="{{$dados->descricao}}">
             </div>
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
             <button onclick="window.location.href='{{route('inicio')}}';" type="button" 

@@ -52,11 +52,11 @@ class ControladorHistorias extends Controller
     {
         $dados = Historia::find($id);
         if(isset($dados)){
-            $dados->nome_hist = $request->input('nome_hist');
-            $dados->descricao_hist = $request->input('descricao_hist');
+            $dados->nomeHist = $request->input('nomeHist');
+            $dados->descricaoHist = $request->input('descricaoHist');
             $dados->autor = $request->input('autor'); 
             $dados->paginas = $request->input('paginas');
-            $dados->classificacao_etaria = $request->input('classificacao_etaria');
+            $dados->classificacao = $request->input('classificacao');
             $dados->save();
             return redirect('/historia')->with('success', 'História cadastrado com sucesso!!');
         }else{

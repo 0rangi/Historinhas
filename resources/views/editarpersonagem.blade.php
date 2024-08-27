@@ -12,8 +12,18 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome" 
-                       value="{{$dados->NomePersonagem}}">
+                <input type="text" class="form-control" name="nomePersonagem" 
+                       value="{{$dados->nomePersonagem}}">
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <input type="text" class="form-control" name="descricaoPersonagem" 
+                       value="{{$dados->descricaoPersonagem}}">
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="text" class="form-control" name="idade" 
+                       value="{{$dados->idade}}">
             </div>
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
             <button onclick="window.location.href='{{route('inicio')}}';" type="button" 

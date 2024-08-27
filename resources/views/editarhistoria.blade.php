@@ -12,8 +12,28 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome" 
-                       value="{{$dados->NomeHist}}">
+                <input type="text" class="form-control" name="nomeHist" 
+                       value="{{$dados->nomeHist}}">
+            </div>
+            <div class="form-group">
+                <label for="nome">Descrição:</label>
+                <input type="text" class="form-control" name="descricaoHist" 
+                       value="{{$dados->descricaoHist}}">
+            </div>
+            <div class="form-group">
+                <label for="nome">Numero de paginas:</label>
+                <input type="text" class="form-control" name="paginas" 
+                       value="{{$dados->paginas}}">
+            </div>
+            <div class="form-group">
+                <label for="nome">Autor:</label>
+                <input type="text" class="form-control" name="autor" 
+                       value="{{$dados->autor}}">
+            </div>
+            <div class="form-group">
+                <label for="nome">Classificação:</label>
+                <input type="text" class="form-control" name="classificacao" 
+                       value="{{$dados->classificacao}}">
             </div>
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
             <button onclick="window.location.href='{{route('inicio')}}';" type="button" 

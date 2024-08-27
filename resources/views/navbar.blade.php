@@ -11,7 +11,6 @@
       <div class="dropdown-menu" aria-labelledby="dropdown01">
         <a class="dropdown-item" href="{{route('novoHistoria')}}">Cadastrar</a>
         <a class="dropdown-item" href="{{route('exibehistoria')}}">Listar</a>
-        <a class="dropdown-item" href="">Pesquisar</a>
       </div>
     </li>
     
@@ -20,7 +19,6 @@
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="{{route('novoPersonagem')}}">Cadastrar</a>
           <a class="dropdown-item" href="{{route('mostarpersonagem')}}">Listar</a>
-          <a class="dropdown-item" href="">Pesquisar</a>
         </div>
       </li>
 
@@ -30,7 +28,6 @@
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="{{route('novoArco')}}">Cadastrar</a>
           <a class="dropdown-item" href="{{route('mostrararco')}}">Listar</a>
-          <a class="dropdown-item" href="">Pesquisar</a>
         </div>
       </li>
   </ul>

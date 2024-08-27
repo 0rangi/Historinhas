@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label for="descricaoHist">Descrição:</label>
                 <input type="descricao" class="form-control" name="descricaoHist" 
-                       placeholder="Informe a descrição do gênero">
+                       placeholder="Informe a descrição da história">
             </div>
             <hr>
             <div class="form-group">

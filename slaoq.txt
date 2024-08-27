@@ -1,13 +1,4 @@
-coisas a resolver:
-deletar personagens dando erro*
-deletar arco dando errado*
-colocar a navbar pra funcionar (dropdown)*
-arco precisa dos personagens para ser cadastrado*
-historias e personagens precisam ser interligados *
-historia precisa ter o cadastro das chaves estrangeiras*
-cadastrar gêneros nas histórias (relação 1 p muitos)(ele não cadastra as histórias sem o gênero aparentemente)*
-cadastrar historia do personagem*
-criar o editar de todas as classes*
+
 
 arrumar as views de editar
 pesquisar de todos as classes
